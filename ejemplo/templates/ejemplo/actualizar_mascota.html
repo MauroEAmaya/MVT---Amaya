@@ -5,8 +5,12 @@
 <form action="/mi-mascota/actualizar/{{ mascota.id }}" method="post"> 
     {% csrf_token %}
     {{ form.as_p }}
+    
     <input type="submit" value="Submit">
+     
 </form>
+
+<a href="/mi-mascota/">Volver a Lista de Mascotas</a>
 
 <h2 style="color:green">{{msg_exito}}</h2>
 
