@@ -17,7 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from ejemplo.views import (index, saludar_a, sumar, 
                             monstrar_familiares, 
-                            BuscarFamiliar, AltaFamiliar)
+                            BuscarFamiliar, AltaFamiliar,
+                            ActualizarFamiliar, BorrarFamiliar,
+                            monstrar_mascotas,monstrar_actividades,
+                            BuscarMascota, BuscarActividad,
+                            AltaMascota, AltaActividad,
+                            ActualizarMascota, ActualizarActividad,
+                            BorrarMascota, BorrarActividad) 
 
 
 urlpatterns = [
@@ -27,7 +33,20 @@ urlpatterns = [
     path("sumar/<int:a>/<int:b>", sumar),
     path('mi-familia/', monstrar_familiares),
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
+    path('mi-mascota/buscar', BuscarMascota.as_view()),
+    path('mi-actividad/buscar', BuscarActividad.as_view()),
     path('mi-familia/alta', AltaFamiliar.as_view()),
+    path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()),
+    path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view()),
+    path('mi-mascota/', monstrar_mascotas),
+    path('mi-actividad/', monstrar_actividades),
+    path('mi-mascota/alta', AltaMascota.as_view()),
+    path('mi-actividad/alta', AltaActividad.as_view()),
+    path('mi-mascota/actualizar/<int:pk>', ActualizarMascota.as_view()),
+    path('mi-mascota/borrar/<int:pk>', BorrarMascota.as_view()),
+    path('mi-actividad/actualizar/<int:pk>', ActualizarActividad.as_view()),
+    path('mi-actividad/borrar/<int:pk>', BorrarActividad.as_view()),
     ]
+
     
 

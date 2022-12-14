@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} Lista de todas mis Mascotas {% endblock %}
+{% block contenido %}
+    <a href="/Mascotas/alta">Nueva Mascota</a>
+  {% for mascota in lista_mascotas %}
+      <ul>
+          <li> 
+            Id:{{mascota.id}} Nombre: {{mascota.nombre}}, Raza: {{mascota.raza}}, Edad: {{mascota.edad}}
+            <a href="/mi-mascota/actualizar/{{ mascota.id }}">Actualizar</a>
+            <a href="/mi-mascota/borrar/{{ mascota.id }}">Borrar</a>
+          </li>
+
+      </ul>
+  {% endfor %}
+{% endblock %}

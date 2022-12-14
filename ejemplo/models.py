@@ -14,3 +14,20 @@ class Familiar(models.Model):
 class Dymmy(models.Model):
 
   nombre = models.CharField(max_length=100)
+
+class Mascota(models.Model):
+
+    nombre = models.CharField(max_length=100)
+    raza = models.CharField(max_length=200)
+    edad = models.CharField(max_length=100)
+    
+
+    def __str__(self):
+      return f"{self.nombre}, {self.raza}, {self.edad}, {self.id}"
+
+class Actividad(models.Model):
+    nombre = models.CharField(max_length=100)
+    dia = models.CharField(max_length=200)
+    horario = models.CharField(max_length=200)
+    def __str__(self):
+      return f"{self.nombre},{self.dia}, {self.horario}, {self.id}"

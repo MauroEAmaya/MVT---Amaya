@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} Lista de todas mis Actividades {% endblock %}
+{% block contenido %}
+    <a href="/mi-actividad/alta">Nueva Actividad</a>
+  {% for actividad in lista_actividades %}
+      <ul>
+          <li> 
+            Id:{{actividad.id}} Nombre: {{actividad.nombre}}, Dia: {{actividad.dia}}, Horario: {{actividad.horario}}
+            <a href="/mi-actividad/actualizar/{{ actividad.id }}">Actualizar</a>
+            <a href="/mi-actividad/borrar/{{ actividad.id }}">Borrar</a>
+          </li>
+
+      </ul>
+  {% endfor %}
+{% endblock %}

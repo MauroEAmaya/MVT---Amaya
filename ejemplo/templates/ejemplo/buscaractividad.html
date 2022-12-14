@@ -1,0 +1,16 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} Buscar actividades por nombre {% endblock %}
+{% block contenido %}
+  
+  <form action="/mi-actividad/buscar" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  {% for actividad in lista_actividades %}
+      <ul>
+          <li> Nombre: {{actividad.nombre}}, Dia: {{actividad.dia}}, Horario: {{actividad.horario}}</li>
+      </ul>
+  {% endfor %}
+{% endblock %}
