@@ -1,15 +1,18 @@
-# Entrega Intermedia del Proyecto Final
+# Proyecto Final
 Proyecto Final
 
-Paso 1
-Para ingresar los datos de prueba Ejecutar:
-" python manage.py shell " luego " import seed_data " y ctrl+z para salir
+Abrir VSCORE, instalar  Python versión 3.10.7, Django versión 4.1.3 y  Pillow (en la terminal ingresar " python -m pip install Pillow ")
+Realizar las migraciones ingresando en la terminal " python mananage.py makemigrations " seguido de " python mananage.py migrate ".
+Luego crear un usuario de administrador ingresando en la terminar " python manage.py createsuperuser " nombre de usuario, mail (opcional) y contraseña 
+Para iniciar el servidor ingresar en la termina " python manage.py runserver "
 
-Paso 2
-Para iniciar el programa ingresar:
-" python manage.py runserver "
+En la barra del explorador ingresamos la siguiente direccion: " localhost:8000/admin " donde podremos cargar una imagen de avatar, modificar autorizaciones de usuarios o borrarlos.
 
-Paso 3
-Enn su explorador ingrese a la siguiente direccion:
+Para ingresar a la pagina principal ingresaremos " localhost:8000/rol_y_aventura/ " donde podremos ingresar  usuario, crear post, modificarlos y eliminar, actualizar nuestros perfil y avatar, enviar y recibir mensajes.
+
+
+
+
+
 
 " http://localhost:8000/ "
