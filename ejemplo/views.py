@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from ejemplo.models import Familiar, Mascota, Actividad
 from ejemplo.forms import Buscar, FamiliarForm, MascotaForm, ActividadForm
 from django.views import View 
-
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView   
 
 def index(request):
     return render(request, "ejemplo/saludar.html")
@@ -263,4 +263,24 @@ class BorrarActividad(View):
       actividad = get_object_or_404(Actividad, pk=pk)
       actividad.delete()
       actividad = Actividad.objects.all()
-      return render(request, self.template_name, {'lista_actividades': actividad})         
+      return render(request, self.template_name, {'lista_actividades': actividad})  
+
+class FamiliarList(ListView):
+  model = Familiar  
+
+class FamiliarDetalle (DetailView):
+  model = Familiar
+
+class FamiliarCrear(CreateView):
+  model = Familiar
+  success_url = "/panel-familia"
+  fields = ["nombre", "direccion", "nacimiento"]
+
+class FamiliarBorrar(DeleteView):
+  model = Familiar
+  success_url = "/panel-familia"
+
+class FamiliarActualizar(UpdateView):
+  model = Familiar
+  success_url = "/success_updated_message"
+  fields = ["nombre", "direccion", "nacimiento"]

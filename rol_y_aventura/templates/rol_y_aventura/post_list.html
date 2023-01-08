@@ -1,0 +1,24 @@
+{% extends 'rol_y_aventura/base.html' %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+    <a href="{% url 'rol-y-aventura-crear' %}">Crear Post</a>
+    {% if user.avatar.imagen %}
+        <a href="{% url 'rol-y-aventura-avatars-actualizar' user.avatar.id %}">Actualizar Avatar</a>
+    {% endif %}
+    <a href="{% url 'rol-y-aventura-users-actualizar' user.id %}">Actualizar User</a>
+    <a href="{% url 'rol-y-aventura-mensajes-listar' %}">Ver Mensajes</a>
+{% endif %}
+<ul>
+{% for post in object_list %}
+    <li>
+        {{post.publicado_el}} - - {{post.titulo}}
+        {% if user.is_authenticated %} 
+            <a href="{% url 'rol-y-aventura-borrar' post.id %}">Borrar</a>
+            <a href="{% url 'rol-y-aventura-actualizar' post.id %}">Actualizar</a>
+        {% endif %}   
+            <a href="{% url 'rol-y-aventura-detalle' post.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
