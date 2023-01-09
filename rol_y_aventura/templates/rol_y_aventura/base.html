@@ -28,11 +28,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'rol-y-aventura-index' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'rol-y-aventura-about' %}">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'rol-y-aventura-mensajes-crear' %}">Contacto</a></li>
                         
                         {%if user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'rol-y-aventura-listar' %}">Admin Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'rol-y-aventura-logout' %}">Salir</a></li>
+                            
                         {% else %}    
                             <li class="nav-item"><a class="nav-link" href="{% url 'rol-y-aventura-login' %}">Ingresar</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'rol-y-aventura-signup' %}">Registrarse</a></li>

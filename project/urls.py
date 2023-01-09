@@ -32,7 +32,7 @@ from ejemplo.views import (index, saludar_a, sumar,
 from rol_y_aventura.views import (index, PostList, PostCrear, PostDetalle,
                                  PostBorrar, PostActualizar, UserSignUp, UserLogin,
                                  UserLogout,AvatarActualizar, UserActualizar,
-                                 MensajeCrear, MensajeListar, MensajeDetalle,MensajeBorrar)
+                                 MensajeCrear, MensajeListar, MensajeDetalle,MensajeBorrar,about)
 from django.contrib.admin.views.decorators import staff_member_required                                 
 
 urlpatterns = [
@@ -90,7 +90,7 @@ urlpatterns = [
     path("rol_y_aventura/mensajes/<int:pk>/detalle/", MensajeDetalle.as_view(), name="rol-y-aventura-mensajes-detalle"),
     path("rol_y_aventura/mensajes/listar/", MensajeListar.as_view(), name="rol-y-aventura-mensajes-listar"),
     path("rol_y_aventura/mensajes/<int:pk>/borrar/", MensajeBorrar.as_view(), name="rol-y-aventura-mensajes-borrar"),
-    
+    path('rol_y_aventura/about/', about, name="rol-y-aventura-about"),
 ]
 
 

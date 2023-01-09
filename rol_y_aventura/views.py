@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView , CreateView, DeleteView, UpdateView, DetailView
-from rol_y_aventura.models import  Post   
+from rol_y_aventura.models import  Post
 from django.urls import reverse_lazy 
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -73,3 +73,6 @@ class UserActualizar(UpdateView):
     model = User
     fields = ["first_name","last_name","email"]
     success_url= reverse_lazy("rol-y-aventura-listar")
+
+def about(request):
+    return render(request, 'rol_y_aventura/about.html')
