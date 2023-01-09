@@ -11,8 +11,5 @@ En la barra del explorador ingresamos la siguiente direccion: " localhost:8000/a
 Para ingresar a la pagina principal ingresaremos " localhost:8000/rol_y_aventura/ " donde podremos ingresar  usuario, crear post, modificarlos y eliminar, actualizar nuestros perfil y avatar, enviar y recibir mensajes.
 
 
-
-
-
-
-" http://localhost:8000/ "
+Demostracion de la pagina:
+https://www.youtube.com/watch?v=3K1RNP5sSLA

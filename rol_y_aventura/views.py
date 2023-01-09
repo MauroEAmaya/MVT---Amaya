@@ -60,7 +60,7 @@ class MensajeCrear(CreateView):
     fields = ['nombre', 'email', 'texto']
     success_message = "Mensaje de contacto enviado!!"
 
-class MensajeBorrar(DeleteView):
+class MensajeBorrar(LoginRequiredMixin, DeleteView):
     model = Mensaje
     success_url = reverse_lazy("rol-y-aventura-mensajes-listar")
 
